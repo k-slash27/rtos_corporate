@@ -29,10 +29,10 @@ export default function Footer() {
           href="https://www.instagram.com/robottosociety/"
           target="_blank"
         >
-          <Image src="/icon_instagram.png" alt="" />
+          <Image width={40} height={40} src="/icon_instagram.png" alt="" />
         </Link>
         <Link className={styles.snsBtn} href="https://twitter.com/RobotToSociety" target="_blank">
-          <Image src="/icon_twitter.png" alt="" />
+          <Image width={40} height={40} src="/icon_twitter.png" alt="" />
         </Link>
       </div>
       <p className={styles.cr}>© RtoS Co., Ltd. All Rights Reserved 2023</p>
