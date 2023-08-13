@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 .top {
   position: relative;
   display: flex;
@@ -6,18 +8,22 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   overflow: hidden;
-  padding: 200px 0;
+  padding: 160px 0;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .description {
   text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
+  font-family: 'Lato', sans-serif;
 }
 
 .bgimg {
@@ -31,6 +37,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: -2;
+}
+
+.top::after {
+  position: absolute;
+  content: '';
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 600px;
   z-index: -1;
 }
 
@@ -83,7 +101,8 @@
   margin-bottom: 40px;
 }
 
-.horizontal {
+.horizontal,
+.horizontalReverse {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -110,9 +129,8 @@
 }
 
 .aboutusImg {
-  width: 100%;
+  width: 450px;
   height: auto;
-  margin-left: -60%;
   border-radius: var(--border-radius);
 }
 
@@ -129,6 +147,17 @@
 
 .infoDescription {
   flex: 1;
+}
+
+.fieldTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.gmap {
+  border: 0;
+  width: 480px;
+  height: 300px;
 }
 
 .hiringImg {
@@ -167,7 +196,7 @@
     top: 0;
     right: 0;
     width: auto;
-    height: 600px;
+    height: 400px;
     object-fit: cover;
     display: flex;
     align-items: center;
@@ -223,6 +252,12 @@
     gap: 40px;
   }
 
+  .horizontalReverse {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
   .businessImg {
     width: 100%;
     height: auto;
@@ -232,6 +267,15 @@
     width: 100%;
     height: auto;
     margin-left: 0;
+  }
+
+  .fieldTitle {
+    margin-top: 30px;
+  }
+
+  .gmap {
+    border: 0;
+    width: 100%;
   }
 
   .hiringImg {

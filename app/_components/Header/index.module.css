@@ -13,12 +13,17 @@
 }
 
 .logo {
-  height: 24px;
+  height: 60px;
   width: auto;
 }
 
 @media (max-width: 640px) {
   .header {
     padding: 24px 16px 8px;
+  }
+
+  .logo {
+    height: 40px;
+    width: auto;
   }
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './index.module.css';
 
 export default function Footer() {
@@ -10,17 +11,31 @@ export default function Footer() {
             <Link href="/news">ニュース</Link>
           </li>
           <li className={styles.item}>
-            <Link href="/members">メンバー</Link>
+            <Link href="/business">事業内容</Link>
           </li>
           <li className={styles.item}>
-            <Link href="">採用情報</Link>
+            <Link href="/contact">会社概要</Link>
           </li>
           <li className={styles.item}>
-            <Link href="/contact">お問い合わせ</Link>
+            <Link href="https://www.youtube.com/@robot-to-society" target="_blank">
+              YouTubeチャンネル
+            </Link>
           </li>
         </ul>
       </nav>
-      <p className={styles.cr}>© SIMPLE. All Rights Reserved 2023</p>
+      <div className={styles.sns}>
+        <Link
+          className={styles.snsBtn}
+          href="https://www.instagram.com/robottosociety/"
+          target="_blank"
+        >
+          <Image src="/icon_instagram.png" alt="" />
+        </Link>
+        <Link className={styles.snsBtn} href="https://twitter.com/RobotToSociety" target="_blank">
+          <Image src="/icon_twitter.png" alt="" />
+        </Link>
+      </div>
+      <p className={styles.cr}>© RtoS Co., Ltd. All Rights Reserved 2023</p>
     </footer>
   );
 }

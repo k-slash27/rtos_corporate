@@ -34,7 +34,7 @@ export default function NewsListItem({ news }: Props) {
           <dt className={styles.title}>{news.title}</dt>
           <dd className={styles.meta}>
             <Category category={news.category} />
-            <PublishedDate date={news.publishedAt || news.createdAt} />
+            <PublishedDate date={news.published || news.createdAt} />
           </dd>
         </dl>
       </Link>
