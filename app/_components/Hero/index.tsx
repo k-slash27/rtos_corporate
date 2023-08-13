@@ -15,6 +15,9 @@ export default function Hero({ title, sub }: Props) {
     case 'Contact':
       src = '/img-aboutus.jpg';
       break;
+    case 'News':
+      src = '/img-molecules.jpg';
+      break;
     default:
       break;
   }
