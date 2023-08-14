@@ -43,4 +43,12 @@
     font-size: 1.4rem;
     font-weight: bold;
   }
+
+  .info {
+    flex-direction: column;
+  }
+
+  .infoDescription {
+    margin-top: 10px;
+  }
 }

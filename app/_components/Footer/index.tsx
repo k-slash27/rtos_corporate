@@ -8,6 +8,9 @@ export default function Footer() {
       <nav className={styles.nav}>
         <ul className={styles.items}>
           <li className={styles.item}>
+            <Link href="/">TOP</Link>
+          </li>
+          <li className={styles.item}>
             <Link href="/news">ニュース</Link>
           </li>
           <li className={styles.item}>

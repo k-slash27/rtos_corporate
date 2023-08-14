@@ -14,6 +14,11 @@ export default function Menu() {
       <nav className={cx(styles.nav, isOpen && styles.open)}>
         <ul className={styles.items}>
           <li>
+            <Link href="/" onClick={close}>
+              TOP
+            </Link>
+          </li>
+          <li>
             <Link href="/news" onClick={close}>
               ニュース
             </Link>
