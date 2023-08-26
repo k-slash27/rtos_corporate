@@ -20,8 +20,4 @@ class ContactController extends Controller
         $meta = $api->getData('meta');
         return $this->view('contact/index', ['meta' => $meta, 'env' => $this->env]);
     }
-
-    public function post() {
-        print_r($_POST);
-    }
 }
