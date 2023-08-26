@@ -10,12 +10,14 @@ use App\Models\Api;
 
 class NewsController extends Controller
 {
-    public function __construct()
-    {
+
+    protected $env;
+
+    public function __construct() {
+        $this->env = $this->env();
     }
 
-    public function index($page = null)
-    {
+    public function index($page = null) {
         $api = new Api();
         $meta = $api->getData('meta');
 
@@ -31,15 +33,14 @@ class NewsController extends Controller
 
         $contents = array_slice($news['contents'], $offset, $limit);
 
-        return $this->view('news/index', ['meta' => $meta, 'news' => $contents, 'current' => $page, 'pageCount' => $pageCount]);
+        return $this->view('news/index', ['meta' => $meta, 'news' => $contents, 'current' => $page, 'pageCount' => $pageCount, 'env' => $this->env]);
     }
 
-    public function detail($id)
-    {
+    public function detail($id) {
         $api = new Api();
         $meta = $api->getData('meta');
         $news = $api->getData('news/' . $id);
 
-        return $this->view('news/detail', ['meta' => $meta, 'news' => $news]);
+        return $this->view('news/detail', ['meta' => $meta, 'news' => $news, 'env' => $this->env]);
     }
 }

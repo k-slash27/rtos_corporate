@@ -13,6 +13,7 @@
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/{{ env.HUBSPOT_PORTAL_ID }}.js"></script>
     <link rel="stylesheet" href="static/css/{{page}}.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="static/js/menu.js"></script>
     {% if page == 'contact' %}
     <script src="static/js/contactForm.js"></script>
     {% endif %}
@@ -26,31 +27,30 @@
         </a>
 
         <div>
-            <nav class="cx(styles.nav, isOpen && styles.open)">
-                <ul class="items">
+            <nav class="Menu_nav">
+                <ul class="Menu_items">
                     <li>
-                        <a href="/" onClick="close">TOP</a>
+                        <a href="/" class="js-close">TOP</a>
                     </li>
                     <li>
-                        <a href="/news" onClick="close">ニュース</a>
+                        <a href="/news" class="js-close">ニュース</a>
                     </li>
                     <li>
-                        <a href="/business" onClick="close">事業内容</a>
+                        <a href="/business" class="js-close">事業内容</a>
                     </li>
                     <li>
-                        <a href="/contact" onClick="close">会社概要</a>
+                        <a href="/contact" class="js-close">会社概要</a>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/@robot-to-society" onClick="close"
-                            target="_blank">YouTubeチャンネル</a>
+                        <a href="https://www.youtube.com/@robot-to-society" class="js-close" target="_blank">YouTubeチャンネル</a>
                     </li>
                 </ul>
-                <button className="cx(styles.button, styles.close)" onClick="close">
-                    <img src="static/img/close.svg" alt="閉じる" width="24" height="24" priority />
+                <button class="Menu_button Menu_close js-close">
+                    <img src="static/img/close.svg" alt="閉じる" width="24" height="24" />
                 </button>
             </nav>
-            <button class="button" onClick="open">
-                <img src="static/img/menu.svg" alt="メニュー" width="24" height="24" priority />
+            <button class="Menu_button js-open">
+                <img src="static/img/menu.svg" alt="メニュー" width="24" height="24" />
             </button>
         </div>
     </header>

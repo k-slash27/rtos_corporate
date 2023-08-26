@@ -9,8 +9,10 @@ use App\Models\Api;
 
 class IndexController extends Controller
 {
-    public function __construct() {
+    protected $env;
 
+    public function __construct() {
+        $this->env = $this->env();
     }
 
     public function index() {
@@ -22,6 +24,6 @@ class IndexController extends Controller
         ]);
 
         // print_r($news);
-        return $this->view('index', ['meta' => $meta, 'news' => $news]);
+        return $this->view('index', ['meta' => $meta, 'news' => $news, 'env' => $this->env]);
     }
 }

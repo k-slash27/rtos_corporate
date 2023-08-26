@@ -6,14 +6,13 @@ namespace App\Controllers;
 require_once 'Controller.php';
 
 use App\Models\Api;
-use Dotenv\Dotenv;
 
 class ContactController extends Controller
 {
-    public $env;
+    protected $env;
 
     public function __construct() {
-        $this->env = Dotenv::createImmutable(__PROJECT_ROOT__)->load();
+        $this->env = $this->env();
     }
 
     public function index() {
