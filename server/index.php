@@ -58,7 +58,6 @@ if (file_exists(__CONTROLLER_DIR__ . "/" . $call . ".php")) {
 
 } else {
     // ファイルがなければ404エラー
-    echo $call;
-    header("HTTP/1.0 404 Not Found");
+    header('Location: /error/404');
     exit;
 }

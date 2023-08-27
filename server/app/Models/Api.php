@@ -7,6 +7,7 @@ namespace App\Models;
 require_once __PROJECT_ROOT__ . "/vendor/autoload.php";
 
 use Dotenv\Dotenv;
+use Exception;
 use \Microcms\Client;
 
 class Api
@@ -25,17 +26,35 @@ class Api
     public function getData($endpoint=null, $field=null, $cond=[]) {
         if ($endpoint != null) {
             if ($cond != []) {
-                $obj = $this->client->list($endpoint, $cond);
+                try {
+                    $obj = $this->client->list($endpoint, $cond);
+                } catch (Exception $e) {
+                    $error_code = $e->getCode() ?? "";
+                    header('Location: /error/'.$error_code);
+                    exit;
+                }
                 $arr = json_decode(json_encode($obj), true);
                 return $arr;    
             }
 
             if ($field != null) {
-                $singleContent = $this->client->get($endpoint)->{$field};
+                try {
+                    $singleContent = $this->client->get($endpoint)->{$field};
+                } catch (Exception $e) {
+                    $error_code = $e->getCode() ?? "";
+                    header('Location: /error/'.$error_code);
+                    exit;
+                }
                 return $singleContent;
             }
 
-            $obj = $this->client->get($endpoint);
+            try {
+                $obj = $this->client->get($endpoint);
+            } catch (Exception $e) {
+                $error_code = $e->getCode() ?? "";
+                header('Location: /error/'.$error_code);
+                exit;
+            }
             $arr = json_decode(json_encode($obj), true);
             return $arr;
         }
