@@ -44,6 +44,15 @@
   a {
     color: inherit;
     text-decoration: none;
+
+    &.emphasis {
+      font-weight: bold;
+      color: #5497c2;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   
   ol,
