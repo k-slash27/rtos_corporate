@@ -2,7 +2,8 @@
     RewriteEngine On
     RewriteBase /
 
-    RewriteCond %{REQUEST_URI} !(^/static/)
+    RewriteCond %{REQUEST_URI} !(^.*/static/(.*))
+    RewriteCond %{REQUEST_URI} !(^/lp/(.*))
     RewriteRule ^.*$ index.php
 
     RewriteRule ^.*/static/(.*)$ /static/$1

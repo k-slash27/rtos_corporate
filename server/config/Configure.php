@@ -6,49 +6,29 @@ namespace Configure;
 
 class Configure
 {    
-    // 環境変数
-    private $env = [
-        '__ENV__' => 'local', // [local, test, prod] の中から選択
-        '__PROJECT_ROOT__' => '/var/www/html/',
-        '__CONTROLLER_DIR__' => '/var/www/html/app/Controllers',
-        '__MODEL_DIR__' => '/var/www/html/app/Models',
-        '__VIEW_DIR__' => '/var/www/html/app/Views',
+    // サーバー環境
+    private $mode = 'local';
+
+    // ドキュメントルート
+    private $root = [
+        'prod' => '/home/users/1/main.jp-rtos/web',
+        'dev' => '/var/www/html',
+        'local' => '/var/www/html',
     ];
 
-    // // DB環境変数
-    // private $db = [
-    //     // 本番DB (※適宜変更)
-    //     'prod' => [
-    //         'host' => 'localhost',
-    //         'user' => 'admin',
-    //         'pass' => '5U1019M0',
-    //         'use' => 'masam'
-    //     ],
-    //     // 検証DB (※適宜変更)
-    //     'test' => [
-    //         'host' => 'localhost',
-    //         'user' => 'admin',
-    //         'pass' => 'admin',
-    //         'use' => 'masam'
-    //     ],
-    //     // ローカルDB
-    //     'local' => [
-    //         'host' => 'mysql5.7',
-    //         'user' => 'admin',
-    //         'pass' => 'admin',
-    //         'use' => 'chat',
-    //     ]
-    // ];
+    // 環境変数
+    private $env = [
+        '__PROJECT_ROOT__' => '/',
+        '__CONTROLLER_DIR__' => '/app/Controllers',
+        '__MODEL_DIR__' => '/app/Models',
+        '__VIEW_DIR__' => '/app/Views',
+    ];
 
     public function __construct() {
         // 環境定義
+        $root_path = $this->root[$this->mode];
         foreach ($this->env as $key => $val) {
-            define($key, $val);
+            define($key, $root_path.$val);
         }
-
-        // // DB環境定義
-        // foreach ($this->db[__ENV__] as $key => $val) {
-        //     define('__DB_'.strtoupper($key).'__', $val);
-        // }
     }
 }
