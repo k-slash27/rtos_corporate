@@ -23,7 +23,6 @@ class IndexController extends Controller
             "orders" => ["-published"]
         ]);
 
-        // print_r($news);
         return $this->view('index', ['meta' => $meta, 'news' => $news, 'env' => $this->env]);
     }
 }

@@ -9,7 +9,6 @@ function close() {
 $(function() {
     $('.js-open').click(function(e) {
         e.stopPropagation();
-        console.log('open')
         open();
     });
 

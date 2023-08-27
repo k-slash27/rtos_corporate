@@ -15,9 +15,10 @@ class Api
     
     public function __construct() {
         Dotenv::createImmutable(__PROJECT_ROOT__)->load();
+
         $this->client = new Client(
-            $_ENV['MICROCMS_SERVICE_DOMAIN'],  // YOUR_DOMAIN は XXXX.microcms.io の XXXX 部分
-            $_ENV['MICROCMS_API_KEY']  // API Key
+            $_ENV['MICROCMS_SERVICE_DOMAIN'],
+            $_ENV['MICROCMS_API_KEY']
         );
     }
 
@@ -28,14 +29,17 @@ class Api
                 $arr = json_decode(json_encode($obj), true);
                 return $arr;    
             }
+
             if ($field != null) {
                 $singleContent = $this->client->get($endpoint)->{$field};
                 return $singleContent;
             }
+
             $obj = $this->client->get($endpoint);
             $arr = json_decode(json_encode($obj), true);
             return $arr;
         }
+
         return 'Bad Request';
     }
 }
