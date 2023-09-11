@@ -1,0 +1,25 @@
+{
+    "name": "kao/rtos_corporate",
+    "authors": [
+        {
+            "name": "Kaori Uruga",
+            "email": "uone.lunerouge@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "~2.0",
+        "microcmsio/microcms-php-sdk": "^1.0",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Configure\\": "config/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.5"
+        }
+    }
+}
